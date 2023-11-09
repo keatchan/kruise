@@ -23,6 +23,7 @@ ARG BASE_IMAGE
 ARG BASE_IMAGE_VERSION
 FROM ${BASE_IMAGE}:${BASE_IMAGE_VERSION}
 
+RUN apk update && apk upgrade --no-cache
 RUN apk add --no-cache ca-certificates bash expat \
   && rm -rf /var/cache/apk/*
 
